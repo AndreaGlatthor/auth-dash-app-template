@@ -33,17 +33,19 @@ All values on the format `{{ SOMETHING }}` need to be replaced with valid values
 ### How to use
 
 #### Setup in Azure
-This project requires that you have an Azure subscription and an Azure Active Directory tenant.
-Follow steps 1-2 [in this guide](https://github.com/Azure-Samples/ms-identity-python-webapp) to setup up the correct resources in Azure.
-Open `config.py` and set the `CLIENT_ID` and `AUTHORITY` according to the values you got from Azure.
+This project requires that you have an Azure subscription and an Azure Active Directory tenant available.
+Follow steps 1-2 [from this guide](https://github.com/Azure-Samples/ms-identity-python-webapp) to setup up the correct resources in Azure.
+Open `config.py` and set the `CLIENT_ID` and `AUTHORITY` according to the values you got from Azure when following the guide.
 
-In addition, it's recommended to place the client secret in a key vault, rather than directly in the repo and use managed identity to access the secret when running in Azure.
+In addition, it's recommended to place the client secret in a key vault, rather than directly in the repo or somewhere else.
+Use managed identity to access the secret both locally and when the application is deployed in Azure, this way you do not have to deal with any secret handling.
 Create a key vault in Azure and add the client secret as a secret in the key vault.
+Remember to give the application the correct access rights to access the key vault using managed identity.
 Open `config.py` and replace the following values `KEYVAULT_URI` and `SECRET_NAME` with the URI to the key vault and the name of the secret.
-This project assumes that a key vault is used rather than accessing the key directly.
+This project assumes that a key vault is used and will not run properly without this being setup correctly.
 
 This example limits access based on a role called `Read`.
-If you want people to be able to access the API endpoint, you will have to give them this role in Azure (or modify the code).
+If you want people to be able to access the API endpoint, you will have to give them this role in Azure (or modify the code to not check for it).
 More information on how you can do this, can be [found here](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps#assign-users-and-groups-to-roles).
 
 
