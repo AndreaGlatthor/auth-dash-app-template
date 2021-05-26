@@ -1,12 +1,12 @@
 # auth-dash-app-template
 
-This repository contains an example of how you can host multiple Plotly Dash apps as one service in Azure.
+This repository contains an example of how you can host multiple **Plotly Dash** apps as one service in **Azure**.
 This enables you to quickly extend the application with new views without having to spend time on hosting and securing your service.
 
-Azure Active Directory is used for authentication and securing the endpoints, which gives you the flexibility to easily add or remove access to individual users or groups.
-The repository also contains an example of how you can use managed identity to pull data from an Azure blob storage and present it to the end-user.
-By using managed identity, it's fairly easy to link the application up with other Azure services like Cosmos DB, Service Bus and other data storage resources.
-This project does not require any local secrets as those are securely stored in an Azure key vault and loaded at run time.
+**Azure Active Directory** is used for authentication and securing the endpoints, which gives you the flexibility to easily add or remove access to individual users or groups.
+The repository also contains an example of how you can use managed identity to pull data from an **Azure blob storage** and present it to the end-user.
+By using **managed identity**, it's fairly easy to link the application up with other Azure services like **Cosmos DB**, **Service Bus** and other data storage resources.
+This project does not require any local secrets as those are securely stored in an **Azure Key Vault** and loaded at run time.
 
 To extend the application with a new view, just extend the list of views found in `app.py`:
 
